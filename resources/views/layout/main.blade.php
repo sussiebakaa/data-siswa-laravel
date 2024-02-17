@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://i.pinimg.com/564x/ae/3b/9a/ae3b9a04ad96f5c7782ac3e481f9add4.jpg" type="image/x-icon">
     
     <!-- Custom styles for this template -->
     <link href="sign-in.css" rel="stylesheet">

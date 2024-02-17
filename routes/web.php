@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ExtracurricularController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\StudentsController;
 use App\Models\Students;
 use App\Models\Eskul;
@@ -49,7 +51,6 @@ Route::delete('/student/delete/{students}', [StudentsController::class, 'destroy
 Route::get('/student/edit/{students}', [StudentsController::class, 'edit']);
 Route::post('/student/update/{students}',[StudentsController::class, 'update']);
 
-
 Route::get('/class/kelas', [KelasController::class, 'index3']);
 Route::get('/class/create',[KelasController::class, 'create']);
 Route::post('/class/add',[KelasController::class, 'store']);  
@@ -57,19 +58,13 @@ Route::delete('/class/delete/{classes}',[KelasController::class, 'destroy']);
 Route::get('/class/edit/{classes}', [KelasController::class, 'edit']);
 Route::post('/class/submit/{classes}',[KelasController::class, 'update']);
 
-
-
 Route::get('/extracurricular', [
     ExtracurricularController::class, 'index1']);
 
-Route::get('/login', function () {
-        return view('login.signin');
+    Route::group(["prefix" => "/join"], function (){
+        Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');;
+        Route::post('/login', [LoginController::class, 'auth']);
+        Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+        Route::post('/register', [RegisterController::class, 'store']);
+        // Route::get('/logout', [LogoutController::class, 'logout'])->middleware('auth');
     });
-
-Route::get('/register', function () {
-        return view('signup.signup');
-    });
-
-
-
-    //controllernya manage request: user request ke server
