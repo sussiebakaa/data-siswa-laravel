@@ -12,23 +12,21 @@ class RegisterController extends Controller
 
     public function index()
     {
-        return view('signup.signup', ["title" => "Register"]);
+        return view('Signup.signup', ["title" => "Register"]);
     }
 
     public function store(Request $request)
     {
-        $validateData = $request->validate([
+        $userData =  [
             'name' => 'required|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:5|max:255',
-        ]);
+        ];
 
-        $validateData['password'] = Hash::make($validateData['password']);
-
-        User::create($validateData);
+        User::create($userData);
         $request->session()->flash('success', 'Register berhasil, Silahkan login !');
 
-        return redirect('/join/login');
+        return redirect('/Login/signin');
     }
 
 }

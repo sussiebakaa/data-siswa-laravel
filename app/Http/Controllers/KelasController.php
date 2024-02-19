@@ -59,7 +59,7 @@ class KelasController extends Controller
     public function update(Request $request, Kelas $classes)
     {
         $validateData = $request->validate([
-            'nama' => 'required'   
+            'nama' => 'required|max:255'   
       
         ]);
         $result = Kelas::where('id', $classes -> id)->update($validateData);

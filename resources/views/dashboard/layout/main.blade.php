@@ -110,48 +110,23 @@
                 <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                     <ul class="nav flex-column h-100">
                         <li class="nav-item">
-                            {{-- @if ($active == "home") --}}
                             <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="">
                                 <span class="material-symbols-outlined">home</span>
-                                Dashboard
+                                Home
                             </a>
-                            {{-- @else --}}
-                            <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="/dashboard/">
-                                <span class="material-symbols-outlined">home</span>
-                                Dashboard
-                            </a>
-                            {{-- @endif --}}
-                        </li>
-                        <li class="nav-item">
-                            {{-- @if ($active == "student") --}}
-                            <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="">
+                            <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="/Dashboard/student/all">
                                 <span class="material-symbols-outlined">people</span>
-                                Students
+                                Student
                             </a>
-                            {{-- @else --}}
-                            <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="/dashboard/student/all">
-                                <span class="material-symbols-outlined">people</span>
-                                Students
-                            </a>
-                            {{-- @endif --}}
                         </li>
                         <li class="nav-item">
-                            {{-- @if ($active == "kelas") --}}
-                            <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="">
-                                <span class="material-symbols-outlined">meeting_room</span>
-                                Grade
+                            <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="/Dashboard/kelas/all">
+                                <span class="material-symbols-outlined">book</span>
+                                Class
                             </a>
-                            {{-- @else --}}
-                            <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="/dashboard/kelas/all">
-                                <span class="material-symbols-outlined">meeting_room</span>
-                                Grade
-                            </a>
-                            {{-- @endif --}}
-                        </li>
                         <li class="nav-item">
-                            <form class="nav-link d-flex align-items-center text-danger" action="/logout" method="post">
-                                {{-- @csrf
-                                <span class="material-symbols-outlined">logout</span> --}}
+                            <form class="nav-link d-flex align-items-center text-danger" action="/login/logout" method="auth">
+                                <span class="material-symbols-outlined">logout</span>
                                 <button type="submit" class="nav-link d-flex align-items-start p-2 text-danger" aria-current="page">Logout</button>
                             </form>
                         </li>

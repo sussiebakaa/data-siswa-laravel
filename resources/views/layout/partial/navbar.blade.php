@@ -31,10 +31,10 @@
                       </button>
                       <ul class="dropdown-menu dropdown-menu-dark">
                         <li><a class="dropdown-item" href="#">Login</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
-                        <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                        <li><a class="dropdown-item" href="/login/logout">Logout</a></li>
+                        <li><a class="dropdown-item" href="/Dashboard/index">Dashboard</a></li>
                         @else
-                        <li><a class="dropdown-item" href="/join/register">Signup</a></li>
+                        <li><a class="dropdown-item" href="/Signup/signup">Signup</a></li>
                         @endif
                       </ul>
                     </li>

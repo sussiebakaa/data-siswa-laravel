@@ -2,7 +2,6 @@
 
 @section('content')
 <h1> Ini adalah student </h1>
-<a type="button" class="btn btn-outline-warning" href="/student/create">Add data student</a>
 
 @if (session()->has('success'))
     <div class="alert alert-success col-lg-12" role="alert">
@@ -26,14 +25,6 @@
         <td>{{$student->kelas->nama}}</td>
         <td>
             <a type="button" class="btn btn-outline-success" href="/student/detail/{{$student['id']}}">Detail</a>
-
-            <form method="POST" action="/student/delete/{{ $student->id }}" class="d-inline-flex p-2" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data?')">
-                @method('delete')
-                @csrf
-                <button type="submit" class="btn btn-outline-danger">Delete</button>
-            </form>
-
-            <a type="button" class="btn btn-outline-warning" href="/student/edit/{{ $student->id }}">Edit</a>
 
         </td>
     </tr>

@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="d-flex align-items-center justify-content-center vh-50">
-  <form class="w-30 d-flex flex-column" action="/join/register" method="POST">
+  <form class="w-30 d-flex flex-column" action="/Signup/store" method="POST">
     @csrf
     <div class="text-center">
       <h1 class="h3 mb-3 fw-normal">Signup</h1>
@@ -21,7 +21,7 @@
       <label for="floatingPassword">Password</label>
     </div>
     <button class="btn btn-primary w-100 py-2" style="margin-top: 10px" type="submit">Signup</button>
-    <p style="margin-top: 10px; text-align: center; font-size: 13px">Already have an account? <a href="/join/login" style="color: rgb(0, 89, 255); text-decoration: underline;">Login</a></p>
+    <p style="margin-top: 10px; text-align: center; font-size: 13px">Already have an account? <a href="/Login/signin" style="color: rgb(0, 89, 255); text-decoration: underline;">Login</a></p>
   </form>
 </div>
 

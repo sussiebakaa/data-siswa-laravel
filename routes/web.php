@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardKelasController;
+use App\Http\Controllers\DashboardStudentController;
 use App\Http\Controllers\ExtracurricularController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LoginController;
@@ -10,8 +12,7 @@ use App\Models\Students;
 use App\Models\Eskul;
 use App\Models\Kelas;
 use Illuminate\Support\Facades\Route;
-
-
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,22 +60,31 @@ Route::delete('/class/delete/{classes}',[KelasController::class, 'destroy']);
 Route::get('/class/edit/{classes}', [KelasController::class, 'edit']);
 Route::post('/class/submit/{classes}',[KelasController::class, 'update']);
 
-Route::get('/extracurricular', [
-    ExtracurricularController::class, 'index1']);
-
-    Route::group(["prefix" => "/join"], function (){
-        Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');;
-        Route::post('/login', [LoginController::class, 'auth']);
-        Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
-        Route::post('/register', [RegisterController::class, 'store']);
-        // Route::get('/logout', [LogoutController::class, 'logout'])->middleware('auth');
-    });
-
+Route::get('/extracurricular', [ExtracurricularController::class, 'index1']);
     
-    Route::group(["prefix" => "/dashboard"], function(){
-        Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
-        Route::group(["prefix" => "/student"], function(){
-            // Route::get('/all', [DashboardController::class, 'index'])->middleware('auth');
-        });
-    });
+
+Route::get('/Login/signin', [LoginController::class, 'index'])->middleware('guest')->name('login');
+Route::get('/Signup/signup', [RegisterController::class, 'index'])->middleware('guest');
+Route::get('/login/logout', [LoginController::class, 'logout'])->middleware('auth');
+Route::post('/Login/auth', [LoginController::class, 'auth']);
+Route::post('/Signup/store', [RegisterController::class, 'store']);
+
+Route::get('/Dashboard/index', [DashboardController::class, 'index'])->middleware('auth');
+
+Route::get('/Dashboard/student/all', [ DashboardStudentController::class, 'index']);
+Route::get('/Dashboard/student/detail/{student}',[DashboardStudentController::class, 'show']); 
+Route::get('/Dashboard/student/create',[DashboardStudentController::class, 'create']);
+Route::post('/Dashboard/student/add',[DashboardStudentController::class, 'store']);  
+Route::delete('/Dashboard/student/delete/{students}', [DashboardStudentController::class, 'destroy']);
+Route::get('/Dashboard/student/edit/{students}', [DashboardStudentController::class, 'edit']);
+Route::post('/Dashboard/student/update/{students}',[DashboardStudentController::class, 'update']);
+
+
+Route::get('/Dashboard/kelas/all', [DashboardKelasController::class, 'index']);
+Route::get('/Dashboard/kelas/create',[DashboardKelasController::class, 'create']);
+Route::post('/Dashboard/kelas/add',[DashboardKelasController::class, 'store']);  
+Route::delete('/Dashboard/kelas/delete/{classes}',[DashboardKelasController::class, 'destroy']);  
+Route::get('/Dashboard/kelas/edit/{classes}', [DashboardKelasController::class, 'edit']);
+Route::post('/Dashboard/kelas/submit/{classes}',[DashboardKelasController::class, 'update']);
+
     
