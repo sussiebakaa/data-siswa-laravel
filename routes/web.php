@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExtracurricularController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LoginController;
@@ -68,3 +69,12 @@ Route::get('/extracurricular', [
         Route::post('/register', [RegisterController::class, 'store']);
         // Route::get('/logout', [LogoutController::class, 'logout'])->middleware('auth');
     });
+
+    
+    Route::group(["prefix" => "/dashboard"], function(){
+        Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
+        Route::group(["prefix" => "/student"], function(){
+            // Route::get('/all', [DashboardController::class, 'index'])->middleware('auth');
+        });
+    });
+    
