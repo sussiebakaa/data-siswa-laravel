@@ -4,7 +4,7 @@
 
 <h1>New data class</h1>
 <div class="col-lg-6">
-<form method="post" action="/Dashboard/class/add">
+<form method="post" action="/Dashboard/kelas/add">
     @csrf
 <div class="mb-3">
     <label for="nama" class="form-label">Kelas</label>

@@ -45,7 +45,6 @@ Route::get('/about', function () {
 });
 
 Route::get('/student', [ StudentsController::class, 'index']);
-
 Route::get('/student/detail/{student}',[StudentsController::class, 'show']); 
 Route::get('/student/create',[StudentsController::class, 'create']);
 Route::post('/student/add',[StudentsController::class, 'store']);  
@@ -61,7 +60,6 @@ Route::get('/class/edit/{classes}', [KelasController::class, 'edit']);
 Route::post('/class/submit/{classes}',[KelasController::class, 'update']);
 
 Route::get('/extracurricular', [ExtracurricularController::class, 'index1']);
-    
 
 Route::get('/Login/signin', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::get('/Signup/signup', [RegisterController::class, 'index'])->middleware('guest');
@@ -70,7 +68,6 @@ Route::post('/Login/auth', [LoginController::class, 'auth']);
 Route::post('/Signup/store', [RegisterController::class, 'store']);
 
 Route::get('/Dashboard/index', [DashboardController::class, 'index'])->middleware('auth');
-
 Route::get('/Dashboard/student/all', [ DashboardStudentController::class, 'index']);
 Route::get('/Dashboard/student/detail/{student}',[DashboardStudentController::class, 'show']); 
 Route::get('/Dashboard/student/create',[DashboardStudentController::class, 'create']);
@@ -78,7 +75,6 @@ Route::post('/Dashboard/student/add',[DashboardStudentController::class, 'store'
 Route::delete('/Dashboard/student/delete/{students}', [DashboardStudentController::class, 'destroy']);
 Route::get('/Dashboard/student/edit/{students}', [DashboardStudentController::class, 'edit']);
 Route::post('/Dashboard/student/update/{students}',[DashboardStudentController::class, 'update']);
-
 
 Route::get('/Dashboard/kelas/all', [DashboardKelasController::class, 'index']);
 Route::get('/Dashboard/kelas/create',[DashboardKelasController::class, 'create']);

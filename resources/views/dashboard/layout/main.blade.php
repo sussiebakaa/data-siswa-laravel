@@ -10,6 +10,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
     <title>Document</title>
+    <link rel="shortcut icon" href="https://i.pinimg.com/564x/ae/3b/9a/ae3b9a04ad96f5c7782ac3e481f9add4.jpg" type="image/x-icon">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
@@ -96,7 +97,7 @@
 
 <body>
     <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Dashboard</a>
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#"> Welcome to Dashboard</a>
         <a class="navbar-brand col-md-3 col-lg-2 fs-6 text-white" href="/home">Go to home page</a>
     </header>
 
@@ -110,7 +111,7 @@
                 <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                     <ul class="nav flex-column h-100">
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="">
+                            <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="/Dashboard/index">
                                 <span class="material-symbols-outlined">home</span>
                                 Home
                             </a>

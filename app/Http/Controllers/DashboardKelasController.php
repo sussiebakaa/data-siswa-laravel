@@ -8,19 +8,18 @@ use Illuminate\Http\Request;
 class DashboardKelasController extends Controller
 {
     public function index()
-    {
-        $perPage = 5;
-        $classes = Kelas::paginate($perPage);
-    
-        return view('Dashboard.kelas.all', [
-            "title" => "kelas",
-            "class" => $classes
-        ]);
-    }
+{
+    $classes = Kelas::all();
+    return view('Dashboard.kelas.all', [
+        "title" => "kelas",
+        "class" => $classes
+    ]);
+}
+
 
     public function create()
     {
-        return view('Dashboard.kelas.all', [
+        return view('Dashboard.kelas.create', [
             "class" => Kelas::all()
 
         ]);

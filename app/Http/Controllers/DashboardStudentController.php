@@ -11,7 +11,7 @@ class DashboardStudentController extends Controller
 {
     public function index()
     {
-        $perPage = 5;
+        $perPage = 10;
         $students = Student::paginate($perPage);
     
         return view('/Dashboard/student/all', [

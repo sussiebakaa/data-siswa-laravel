@@ -39,5 +39,6 @@
         @endforeach
     </table>
     
-    <div class="pagination">{{ $students->links() }}</div> <!-- Move pagination outside the loop -->
+    <div class="pagination">
+        {{ $students->links() }}</div>
 @endsection

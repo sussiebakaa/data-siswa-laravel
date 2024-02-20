@@ -30,7 +30,6 @@
                         Hi, {{ auth()->user()->name }}
                       </button>
                       <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="#">Login</a></li>
                         <li><a class="dropdown-item" href="/login/logout">Logout</a></li>
                         <li><a class="dropdown-item" href="/Dashboard/index">Dashboard</a></li>
                         @else

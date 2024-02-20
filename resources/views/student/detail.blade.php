@@ -15,7 +15,7 @@
 
     <div class="form-group">
         <label for="">Class</label>
-        <input type="text" class="form-controll" name="kelas" value="{{$students->kelas}}" disabled>
+        <input type="text" class="form-controll" name="kelas" value="{{$students->kelas->nama}}" disabled>
     </div>
 
     <div class="form-group">

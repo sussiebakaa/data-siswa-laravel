@@ -2,7 +2,7 @@
 
 @section('content')
 <h1> Data Kelas</h1>
-<a type="button" class="btn btn-outline-warning" href="/Dashboard/kelas/add">Add class</a>
+<a type="button" class="btn btn-outline-warning" href="/Dashboard/kelas/create">Add class</a>
 
 @if (session()->has('success'))
     <div class="alert alert-success col-lg-12" role="alert">

@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-<h1> Ini adalah student </h1>
+<h1> Student </h1>
 
 @if (session()->has('success'))
     <div class="alert alert-success col-lg-12" role="alert">
